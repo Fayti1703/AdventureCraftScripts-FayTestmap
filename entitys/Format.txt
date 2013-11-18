@@ -1,0 +1,7 @@
+width = widthInBlocks
+height = HeightInBlocks
+onCreated = onSpawnedScript
+onUpdate = onUpdateScript
+onDeath = onDeathScript
+onAttacked = onAttackedScript
+onInteract = onInteractScript (use for friendly stuffs)

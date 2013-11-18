@@ -1,0 +1,7 @@
+width = 0.6
+height = 1.7
+onCreated = Testzombie_onSpawn.js
+onUpdate = Testzombie_onUpdate.js
+onDeath = Testzombie_onDeath.js
+onAttacked = Testzombie_onAttack.js
+onInteract = Testzomibe_onInteract.js

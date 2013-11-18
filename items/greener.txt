@@ -1,0 +1,5 @@
+name=Dirt Greener
+itemID=602
+iconIndex=9
+maxStackSize=1
+onItemUsedScript=greener.js

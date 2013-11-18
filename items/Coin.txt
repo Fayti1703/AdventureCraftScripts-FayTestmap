@@ -1,0 +1,4 @@
+itemID = 600
+name = Coin
+maxStackSize = 64
+iconIndex = 184

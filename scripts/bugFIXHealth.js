@@ -1,0 +1,1 @@
+player.maxHealth = 40

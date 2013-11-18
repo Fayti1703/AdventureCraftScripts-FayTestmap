@@ -1,0 +1,6 @@
+itemID = 601
+name = Teleport Stone
+iconIndex = 207
+maxStackSize = 1
+maxItemDamage = 0
+onItemUsedScript = TPStone.js

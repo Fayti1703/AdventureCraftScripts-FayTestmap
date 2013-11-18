@@ -1,0 +1,6 @@
+itemID = 20001
+name = Gravity Wand
+iconIndex = 185
+onItemUsedScript = wand.js
+maxItemDamage = 200
+maxStackSize = 1

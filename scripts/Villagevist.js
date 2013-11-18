@@ -1,0 +1,1 @@
+vistedVillage = true

@@ -1,0 +1,1 @@
+entity.pathToBlock(-69,61,75)
