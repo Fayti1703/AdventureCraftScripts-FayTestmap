@@ -23,7 +23,7 @@ var currentLine = 6
 LFTL.removeFromScreen()
 var currentLine = 7
 } catch(e) {if(debugStuff){chat.print(e);chat.print("at "+ currentLine)}}
-uio = false
+uiO = false
 }
 if(typeof timeing == undefined)
 {
@@ -81,9 +81,8 @@ if(	entityHit != null &&
 	entityHit.getClassType() != "Mob" &&
 	entityHit.getClassType() != "Minecart" &&
 	entityHit.getClassType() != "Boat" )
-    uio = true
-
 {
+    uiO = true
     var currentLine = 0
 	// To fix a weird bug where some mobs have more health then they should
 	// Should look into that more
@@ -92,11 +91,9 @@ if(	entityHit != null &&
 	
 	// Now we draw the display
 	HealthPcnt = entityHit.health/entityHit.maxHealth;
-    display1.removeFromScreen()
+    clear()
 	display1 = UIRect((ui.getWidth()/2)-(104),4,208,32,(0.0 + (1.0-HealthPcnt))*0.1,1.0*HealthPcnt*0.1,0.0,0.6)
-    display2.removeFromScreen()
 	display2 = UIRect((ui.getWidth()/2)-(100),18,200,14,0.0,0.0,0.0,0.5)
-    display3.removeFromScreen()
 	display3 = UIRect((ui.getWidth()/2)-(100),18,200*HealthPcnt,14,(0.0 + (1.0-HealthPcnt)),1.0*HealthPcnt,0.0,0.5);
 	DaString = Math.max(Math.round(100*HealthPcnt),0)+"%";
 	DaClass = entityHit.getClassType();
@@ -126,26 +123,26 @@ if(	entityHit != null &&
 	{
 	DaDisplay = DaName
 	}
-    display4.removeFromScreen()
 	display4 = UILabel(DaDisplay,(ui.getWidth()/2)-(ui.getStringWidth(DaDisplay)/2),8)
-    display5.removeFromScreen()
 	display5 = UILabel(DaString,(ui.getWidth()/2)-(ui.getStringWidth(DaString)/2),21)
     clear = false
 }
     timeing = timeing + 1;
 	if(entityHit != null)
     {
-    if(entityHit.getClassType() == "NPC" && uio == true ||
-    entityHit.getClassType() == "Painting" && uio == true ||
-    entityHit.getClassType() == "FallingSand" && uio == true  ||
-    entityHit.getClassType() == "Mob" && uio == true  ||
-    entityHit.getClassType() == "Minecart" && uio == true||
-    entityHit.getClassType() == "Boat" && uio == true)
+    if(entityHit.getClassType() == "NPC" && uiO == true ||
+    entityHit.getClassType() == "Painting" && uiO == true ||
+    entityHit.getClassType() == "FallingSand" && uiO == true  ||
+    entityHit.getClassType() == "Mob" && uiO == true  ||
+    entityHit.getClassType() == "Minecart" && uiO == true||
+    entityHit.getClassType() == "Boat" && uiO == true)
     { doStuffLF = true } else {chat.print("1.b false!")}}else{chat.print("1.a false!") }
-    if(entityHit == null && uio == true) {doStuffLF = true} else chat.print("2 false!")
+    if(entityHit == null && uiO == true) {doStuffLF = true} else {chat.print("2 false!")}
 	if(doStuffLF == true) {
+    try{
     LFL.removeFromScreen()
     LFL = undefined
+    } catch(e){if(debugStuff){chat.print(e)}}
     LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
     try {
     LFTL.removeFromScreen()
