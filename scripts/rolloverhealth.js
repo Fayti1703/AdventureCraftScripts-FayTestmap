@@ -30,6 +30,11 @@ if(typeof timeing == undefined)
 timeing = 0
 }
 
+try {
+LFTL.removeFromScreen()
+LFL.removeFromScreen()
+} catch(e){if(debugStuff){chat.print(e)}}
+
 //Say the hitted Entity is normal
 Normal = true
 
@@ -65,7 +70,6 @@ timeing = 0
 if( timeing > 100)
 {
 clear();
-timeing = 0
 }
 //}
 
@@ -82,6 +86,7 @@ if(	entityHit != null &&
 	entityHit.getClassType() != "Minecart" &&
 	entityHit.getClassType() != "Boat" )
 {
+    timeing = 0
     uiO = true
     var currentLine = 0
 	// To fix a weird bug where some mobs have more health then they should
@@ -127,30 +132,11 @@ if(	entityHit != null &&
 	display5 = UILabel(DaString,(ui.getWidth()/2)-(ui.getStringWidth(DaString)/2),21)
     clear = false
 }
-    timeing = timeing + 1;
-	if(entityHit != null)
-    {
-    if(entityHit.getClassType() == "NPC" && uiO == true ||
-    entityHit.getClassType() == "Painting" && uiO == true ||
-    entityHit.getClassType() == "FallingSand" && uiO == true  ||
-    entityHit.getClassType() == "Mob" && uiO == true  ||
-    entityHit.getClassType() == "Minecart" && uiO == true||
-    entityHit.getClassType() == "Boat" && uiO == true)
-    { doStuffLF = true } else {chat.print("1.b false!")}}else{chat.print("1.a false!") }
-    if(entityHit == null && uiO == true) {doStuffLF = true} else {chat.print("2 false!")}
-	if(doStuffLF == true) {
-    try{
-    LFL.removeFromScreen()
-    LFL = undefined
-    } catch(e){if(debugStuff){chat.print(e)}}
-    LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
-    try {
-    LFTL.removeFromScreen()
-    LFTL = undefined
-    } catch(e){if(debugStuff){chat.print(e)}}
+else if(timeing < 100) {
     LFTL = UILabel(Math.round((100 - timeing) / 20)+" s",ui.getWidth()/2+120+45,22);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
-    doStuffLF = false
-    }
+    LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
+}
+    timeing = timeing + 1
 //*******************************//
 //  End of Code for              //
 //  Rollover Health 1.0          //
