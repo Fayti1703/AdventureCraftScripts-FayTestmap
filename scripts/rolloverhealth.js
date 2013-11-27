@@ -25,8 +25,7 @@ var currentLine = 7
 } catch(e) {if(debugStuff){chat.print(e);chat.print("at "+ currentLine)}}
 uiO = false
 }
-if(typeof timeing == undefined)
-{
+if(typeof timeing == undefined) {
 timeing = 0
 }
 
@@ -56,24 +55,18 @@ entityHit = results[2];
 
 if(entityHit != null) {
 var alive = entityHit.isAlive()
-timeing = 0
 }
-//if(entityHit != null && !alive) {clear()}
-//if( entityHit == null ||
- //   entityHit.getClassType() == "NPC"  || // Remove this line if you want to display NPC health aswell
-//	entityHit.getClassType() == "Painting" ||
-	//entityHit.getClassType() == "FallingSand" ||
-	//entityHit.getClassType() == "Mob" ||
-	//entityHit.getClassType() == "Minecart" ||
-	//entityHit.getClassType() == "Boat" )
-//{
 if( timeing > 100)
 {
 clear();
 }
-//}
 
 if(entityHit != null && alive)
+{
+clear();
+}
+
+if(!alive)
 {
 clear();
 }
@@ -108,24 +101,20 @@ if(	entityHit != null &&
 	DaName = "Human Zombie" //It's a Human Zombie!
 	Normal = false
 	}
-	if(DaClass == "SkeletonSword")
-	{
+	if(DaClass == "SkeletonSword") {
 	Normal = false
 	DaName = "Skeleton with Sword" //It's a Skeleton with a Sword!
 	}
-    if(DaClass == "SkeletonBoss")
-    {
+    if(DaClass == "SkeletonBoss") {
     Normal = false
     DaName = "Skeleton Boss" //It's a Skeleton Boss!
     }
-	if(entityHit.stunned > 0)
-	{
+	if(entityHit.stunned > 0) {
 	DaDisplay = "Stunned " + DaName //So its Stunned,display that.
 	Normal = false
 	Stunned = true
 	}
-	if(Stunned == false)
-	{
+	if(Stunned == false) {
 	DaDisplay = DaName
 	}
 	display4 = UILabel(DaDisplay,(ui.getWidth()/2)-(ui.getStringWidth(DaDisplay)/2),8)
@@ -133,8 +122,22 @@ if(	entityHit != null &&
     clear = false
 }
 else if(timeing < 100) {
+    if(entityHit != null) {
+        if(entityHit.getClassType() != "NPC"  && // Remove this line if you want to display NPC health aswell
+        entityHit.getClassType() != "Painting" &&
+        entityHit.getClassType() != "FallingSand" &&
+        entityHit.getClassType() != "Mob" &&
+        entityHit.getClassType() != "Minecart" &&
+        entityHit.getClassType() != "Boat" ) {
+            LFTL = UILabel(Math.round((100 - timeing) / 20)+" s",ui.getWidth()/2+120+45,22);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
+            LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
+    }
+}
+else
+{
     LFTL = UILabel(Math.round((100 - timeing) / 20)+" s",ui.getWidth()/2+120+45,22);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
     LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
+}
 }
     timeing = timeing + 1
 //*******************************//
