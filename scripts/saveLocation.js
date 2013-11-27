@@ -12,7 +12,9 @@ used = false
 YouwantQuestion.removeFromScreen()
 TeleportQuestion.removeFromScreen()
 saveQuestion.removeFromScreen()
-try{loadQuestion.removeFromScreen()} catch(e) {}
+try{
+  loadQuestion.removeFromScreen()
+} catch(e) {}
 unuseable = false
 }
 }
