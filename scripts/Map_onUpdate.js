@@ -129,10 +129,6 @@ if(keyboard.isKeyDown(keyboard.getKeyID("F10"))) {chat.print(debug)}
 	{
 		player.setVelocity(player.getVelocity().x,0.3,player.getVelocity().z)
 	}
-    if(TPStoneInUse)
-    {
-    ShowTPStoneLabels()
-    }
     //Heal over time (seprate)
     script.runScript("healovertime.js")
     //sculpt Tool (seprate)

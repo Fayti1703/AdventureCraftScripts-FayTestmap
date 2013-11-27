@@ -9,7 +9,10 @@ keyboard.unbindKey(keyboard.getKeyID("L"))
 keyboard.unbindKey(keyboard.getKeyID("S"))
 player.setStunned(0)
 used = false
-TPStoneInUse = false
+YouwantQuestion.removeFromScreen()
+TeleportQuestion.removeFromScreen()
+saveQuestion.removeFromScreen()
+try{loadQuestion.removeFromScreen()} catch(e) {}
 unuseable = false
 }
 }

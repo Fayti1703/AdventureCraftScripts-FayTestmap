@@ -40,14 +40,8 @@ case 28 : ent.dropItem(Item(600));break;
 case 29 : ent.dropItem(Item(600));break;
 case 30 : break;
 }
-if(ent.fireLevel == 0){
-ent.dropItem(Item(319))
-ent.dropItem(Item(319))
-}
-else {
-ent.dropItem(Item(320))
-ent.dropItem(Item(320))
-}
+ent.dropItem(Item(352))
+ent.dropItem(Item(352))
 ent.dropItem(Item(352))
 ent.dropItem(Item(352))
 ent.dropItem(Item(352))
