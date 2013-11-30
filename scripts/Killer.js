@@ -1,3 +1,3 @@
 if(hitEntity != null){
-hitEntity.attackEntityFrom(player,20)
+hitEntity.attackEntityFrom(player,hitEntity.health)
 }

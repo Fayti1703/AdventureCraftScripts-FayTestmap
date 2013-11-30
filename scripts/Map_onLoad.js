@@ -1,3 +1,5 @@
+LFL = UILabel("Losing Focus...",ui.getWidth()/2+120,14);LFL.red = 1;LFL.blue = 0.25;LFL.green = 0.25
+LFL.removeFromScreen()
 timeE = []
 shipResetTimer = 0
 healTime = 0
