@@ -103,45 +103,43 @@ if(keyboard.isKeyDown(keyboard.getKeyID("F10"))) {chat.print(debug)}
 		//Feather Vanish
 			inv.consumeItem(288)
     //Resets Sugar Canes after Death[Needed Due to AdventureCraft bug (Version: r1095)]
-    if(player.isAlive() == 0)
-    {
-        world.triggerBlock(-98,64,-97)
-    }
+        if(player.isAlive() == 0)
+        {
+            world.triggerBlock(-98,64,-97)
+        }
 	//Sleep (seprate)
     script.runScript("sleeping.js")
-	//Bugfix Sleep
-	if(sleepEffect.alpha > 1)
-	{
-	sleepEffect.alpha = 1
-	}
-	if(sleepEffect.alpha < 0)
-	{
-	sleepEffect.alpha = 0
-	}
+	//Bugfix Sleep <-- Gonna be used soon again, found the "source of all evil"!
+        if(sleepEffect.alpha > 1)
+        {
+            sleepEffect.alpha = 1
+        }
+        if(sleepEffect.alpha < 0)
+        {
+            sleepEffect.alpha = 0
+        }
 	//Rolloverhealth(seprate)
-    if(rollhealth) {
-	script.runScript("rolloverhealth.js")
-    }
+        if(rollhealth) {
+            script.runScript("rolloverhealth.js")
+        }
 	//Stacks above 64 update(seprate)
-	script.runScript("U_Stack.js")
+        script.runScript("U_Stack.js")
 	//Fly up(debug only)
-	if(keyboard.isKeyDown(keyboard.getKeyID("I")))
-	{
-		player.setVelocity(player.getVelocity().x,0.3,player.getVelocity().z)
-	}
+        if(keyboard.isKeyDown(keyboard.getKeyID("I")))
+        {
+            player.setVelocity(player.getVelocity().x,0.3,player.getVelocity().z)
+        }
     //Heal over time (seprate)
-    script.runScript("healovertime.js")
-    //sculpt Tool (seprate)
-    //script.runScript("sculptingUpdate-v2.js")
+        script.runScript("healovertime.js")
 	//Money GUI (seprate)
-	script.runScript("Displaymoney.js")
+        script.runScript("Displaymoney.js")
     //Reseting Ship (~~ SPOILER ALERT ~~)
-    if(shipResetTimer >= 60)
-    {
-    world.triggerBlock(-76,62,103)
-    world.triggerBlock(-86,62,133)
-    shipResetTimer = 0
-    }
+        if(shipResetTimer >= 60) {
+            world.triggerBlock(-76,62,103)
+            world.triggerBlock(-86,62,133)
+            shipResetTimer = 0
+        }
     //Health Pack (seprate)
-    //script.runScript("healPack.js")
-    
+        //script.runScript("healPack.js")
+    //fireBoom Script (aka the "Player on Fire + Bomb in Hand = Boom" Script)
+        script.runScript("fireBoom.js")
