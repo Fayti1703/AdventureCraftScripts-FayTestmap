@@ -6,7 +6,7 @@ try {
 	entity.setHealth(entity.getHealth() - attackingDamage);
 }
 catch(e) {}
-
+chat.print(attackingEntity)
 entity.setVelocity(player.lookVec.x / 2,0.4,player.lookVec.z / 2);
 entity.setHurtTime(10)
 }
