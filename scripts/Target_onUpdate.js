@@ -1,0 +1,1 @@
+timeE[entity.entityID] = timeE[entity.entityID] + 1

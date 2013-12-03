@@ -1,0 +1,5 @@
+width = 1
+height = 1
+OnCreated = Target_onSpawned.js
+OnUpdate = Target_onUpdate.js
+OnAttacked = Target_onAttack.js
