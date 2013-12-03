@@ -7,9 +7,8 @@ try {
 }
 catch(e) {}
 try {
-chat.print(attackingEntity)
-} catch(e) {if(e) chat.print("Generic")}
-entity.setVelocity(player.lookVec.x / 2,0.4,player.lookVec.z / 2);
+entity.setVelocity(attackingEntity.lookVec.x / 2,0.4,attackingEntity.lookVec.z / 2);
+} catch(e) {}
 entity.setHurtTime(10)
 }
 false;
