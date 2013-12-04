@@ -1,0 +1,1 @@
+status[entity.entityID].Body.removeFromScreen()
