@@ -15,5 +15,4 @@ Notes:
 
 - Non-relative Positions in Scripts can't be used in other maps.
 
-- If you have problems with Scripting or need a Reference, go to http://adventurecraft.wikkii.com/wiki/Script_guide ,
-  the AdventureCraft's Wiki's Script Guide. Reference can be found from Point "Classes and Objects" on.
+- Currently writing Reference for Scripting, AdventureCraft wiki has closed down.
